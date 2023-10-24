@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { getRandomUser } from "../utilities/api";
 import Instructor from "./Instructor";
-export default class CyclopediaClassBased extends Component {
+
+export default class CyclopediaClassPage extends Component {
   constructor(props) {
     super(props);
     this.state = JSON.parse(localStorage.getItem("cyclopedia")) || {
@@ -15,12 +16,12 @@ export default class CyclopediaClassBased extends Component {
   }
 
   componentDidMount = async () => {
-    console.log("component did mount");
+    
     if (JSON.parse(localStorage.getItem("cyclopedia"))) {
       //this.setState(JSON.parse(localStorage.getItem("cyclopedia")));
     } else {
       const response = await getRandomUser();
-      console.log(response);
+   
 
       this.setState((prevState) => {
         return {
@@ -35,10 +36,8 @@ export default class CyclopediaClassBased extends Component {
   };
 
   componentDidUpdate= async(previousProps, previousState) =>{
-    console.log("component did update");
+  
     localStorage.setItem("cyclopedia", JSON.stringify(this.state));
-    console.log("Old State - " + previousState.studentCount)
-    console.log("New State - " + this.state.studentCount)
     if(previousState.studentCount < this.state.studentCount) {
       const response = await getRandomUser();
       this.setState((prevState)=> {
@@ -60,7 +59,6 @@ export default class CyclopediaClassBased extends Component {
   }
 
   componentWillUnmount() {
-    console.log("component will unmount");
   }
 
   handleAddStudent = () => {
@@ -88,7 +86,6 @@ export default class CyclopediaClassBased extends Component {
   }
 
   render() {
-    console.log("Render Component");
     return (
       <div>
         <div className="p-3">

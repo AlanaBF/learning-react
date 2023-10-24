@@ -6,17 +6,17 @@ export default class Instructor extends Component {
     // }
 
     componentDidMount() {
-        console.log("Mounted-Instructor")
+  
     }
     componentWillUnmount() {
-        console.log("UnMount-Instructor")
+       
     }
     componentDidUpdate() {
-        console.log("Update-Instructor")
+        
     }
 
   render() {
-    console.log("Render-Instructor")
+ 
     return (
       <div>
          <div className="">

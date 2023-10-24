@@ -1,0 +1,26 @@
+.navbar {
+background-color: black;
+color: grey;
+text-align: start;
+margin: 0;
+border-bottom: 1px solid #777
+}
+
+.logo {
+    width: 50px;
+    padding-right: 20px;
+}
+
+.navbar-heading {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 10px;
+}
+
+.footer {
+    color: grey;
+    margin-top: 10px;
+    border-top: 1px solid #555;
+    text-align: center;
+}
